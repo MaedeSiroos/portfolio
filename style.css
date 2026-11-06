@@ -1434,8 +1434,10 @@ main {
     }
 
     .note-top {
-        right: -50px;
-        top: 55px;
+        top: 5px;
+        right: -18px;
+        transform: scale(.82);
+        transform-origin: top right;
     }
 
     .note-bottom {
