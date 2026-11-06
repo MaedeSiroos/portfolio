@@ -1434,10 +1434,7 @@ main {
     }
 
     .note-top {
-        top: 5px;
-        right: -18px;
-        transform: scale(.82);
-        transform-origin: top right;
+        display: none;
     }
 
     .note-bottom {
