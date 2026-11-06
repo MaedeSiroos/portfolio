@@ -1434,7 +1434,8 @@ main {
     }
 
     .note-top {
-        display: none;
+        right: -30px;
+        top: 55px;
     }
 
     .note-bottom {
@@ -1607,6 +1608,10 @@ main {
 
     .project-info h3 {
         font-size: 12px;
+    }
+   .note-top {
+        right: -30px;
+        top:-10px;
     }
 }
 
