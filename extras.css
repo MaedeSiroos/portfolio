@@ -1,0 +1,406 @@
+/* ==========================================================
+   extras.css  —  بعد از style.css لود بشه:
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="extras.css">
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   ۱. حلقه نئونی چرخان دور عکس (با هاور)
+   ---------------------------------------------------------- */
+@property --ring-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes ring-spin {
+    to { --ring-angle: 360deg; }
+}
+
+/* خود حلقه: یک نوار باریک بیرون قاب */
+.photo-frame::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    padding: 3px;
+    border-radius: 166px 166px 26px 26px;
+    background: conic-gradient(from var(--ring-angle),
+            transparent 0deg,
+            #7fe6ff 55deg,
+            #3a8dff 115deg,
+            transparent 180deg,
+            #b9a4ff 245deg,
+            #7fe6ff 315deg,
+            transparent 360deg);
+    /* فقط لبه باقی می‌مونه، وسط توخالی می‌شه */
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    opacity: 0;
+    transition: opacity .5s ease;
+    pointer-events: none;
+    animation: ring-spin 3.4s linear infinite;
+}
+
+/* درخشش نرم پشت قاب (روی hero-visual چون قاب خودش سفیده) */
+.hero-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 310px;
+    height: 390px;
+    border-radius: 160px 160px 20px 20px;
+    background: conic-gradient(from var(--ring-angle),
+            transparent 0deg, #7fe6ff 60deg, #3a8dff 120deg,
+            transparent 180deg, #b9a4ff 250deg, #7fe6ff 320deg, transparent 360deg);
+    filter: blur(26px);
+    opacity: 0;
+    transition: opacity .6s ease;
+    animation: ring-spin 3.4s linear infinite;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.photo-frame {
+    transition: transform .6s cubic-bezier(.22, 1, .36, 1), box-shadow .6s ease;
+}
+
+.hero-visual:hover .photo-frame::before {
+    opacity: 1;
+}
+
+.hero-visual:hover::before {
+    opacity: .55;
+}
+
+.hero-visual:hover .photo-frame {
+    transform: rotate(0deg) translateY(-6px);
+    box-shadow: 0 30px 80px rgba(54, 140, 220, .28);
+}
+
+/* روی موبایل/لمسی هاور نداریم؛ حلقه همیشه کمرنگ روشنه */
+@media (hover: none) {
+    .photo-frame::before {
+        opacity: .85;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .photo-frame::before,
+    .hero-visual::before {
+        animation: none !important;
+    }
+}
+
+/* ----------------------------------------------------------
+   ۲. دکمه دانلود رزومه (جای «بیشتر درباره من»)
+   ---------------------------------------------------------- */
+.button-outline {
+    background: rgba(255, 255, 255, .75);
+    color: #2b7fbb;
+    border: 1px solid #bcdcf3;
+    box-shadow: 0 6px 16px rgba(65, 143, 201, .08);
+}
+
+.button-outline img {
+    width: 18px;
+    height: 18px;
+    transition: transform .3s ease;
+}
+
+.button-outline:hover {
+    background: #fff;
+    border-color: #8fc4e8;
+    transform: translateY(-3px);
+}
+
+.button-outline:hover img {
+    transform: translateY(2px);
+}
+
+/* نسخه شیشه‌ای برای پنل آبی تیره (بخش ارتباط) */
+.button-ghost {
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .45);
+    background: rgba(255, 255, 255, .1);
+}
+
+.button-ghost img {
+    width: 18px;
+    height: 18px;
+}
+
+.button-ghost:hover {
+    background: rgba(255, 255, 255, .2);
+    transform: translateY(-3px);
+}
+
+.contact-copy .button+.button {
+    margin-inline-start: 10px;
+}
+
+/* ----------------------------------------------------------
+   ۳. کارت‌های ارتباط با آیکون و افکت «کج‌شدن پس‌زمینه»
+   ---------------------------------------------------------- */
+.contact-details a {
+    align-items: center;
+    padding: 14px 16px;
+    color: #fff;
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .28);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-details a:hover {
+    background: rgba(255, 255, 255, .18);
+    border-color: rgba(255, 255, 255, .55);
+}
+
+.contact-details a span {
+    color: #b9ddf5;
+}
+
+.contact-details a b {
+    color: #fff;
+    direction: ltr;
+    text-align: right;
+}
+
+.c-email {
+    --g: linear-gradient(135deg, #8fe6ff, #2f9bff);
+}
+
+.c-linkedin {
+    --g: linear-gradient(135deg, #4fb2ff, #1060c8);
+}
+
+.c-github {
+    --g: linear-gradient(135deg, #b9a4ff, #5b49d6);
+}
+
+/* ---- آیکون: مربع رنگی دقیقاً پشت مربع شیشه‌ای (مثل Uiverse) ---- */
+.contact-details a .c-icon {
+    position: relative;
+    isolation: isolate;
+    display: block;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+/* مربع رنگی پشت؛ هم‌اندازه و منطبق با مربع آیکون */
+.c-icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 9px;
+    background: var(--g, linear-gradient(45deg, #7fd0ff, #2f8cff));
+    pointer-events: none;
+    transition: transform .3s ease;
+}
+
+/* مربع شیشه‌ای جلو با آیکون */
+.c-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, .45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: background-color .3s ease;
+}
+
+/* هاور: مربع رنگی از پایین کج می‌شه و از کنار بیرون می‌زنه */
+.contact-details a:hover .c-icon::before {
+    transform: rotate(35deg);
+    transform-origin: bottom;
+}
+
+.contact-details a:hover .c-icon img {
+    background-color: rgba(255, 255, 255, .22);
+}
+
+@media (hover: none) {
+    .contact-details a:hover .c-icon::before {
+        transform: none;
+    }
+}
+
+/* ----------------------------------------------------------
+   ۴. درباره من: بدون باکس بزرگ + سه عدد کلیدی
+   ---------------------------------------------------------- */
+.about {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border-top: 1px solid #cfe5f6;
+    border-bottom: 1px solid #cfe5f6;
+    padding-inline: 10px;
+}
+
+.about-content p {
+    max-width: 560px;
+}
+
+.about-facts {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: start;
+    margin: 26px 0 8px;
+    padding: 0;
+}
+
+.about-facts li {
+    padding-inline: 22px;
+    border-inline-start: 1px solid #c6e0f3;
+    line-height: 1.6;
+}
+
+.about-facts li:first-child {
+    padding-inline-start: 0;
+    border-inline-start: 0;
+}
+
+.about-facts b {
+    display: block;
+    font: 700 24px Georgia, serif;
+    color: #3f93cc;
+}
+
+.about-facts span {
+    font-size: 12px;
+    color: #62798e;
+}
+
+/* ----------------------------------------------------------
+   ۵. خوانایی: فونت‌های بزرگ‌تر، کنتراست بهتر، بدون letter-spacing منفی
+   ---------------------------------------------------------- */
+/* letter-spacing منفی حروف فارسی رو از هم جدا و زشت می‌کنه */
+.hero h1,
+.section-heading h2,
+.about-content h2,
+.contact-copy h2 {
+    letter-spacing: 0;
+}
+
+.main-nav a {
+    font-size: 14px;
+}
+
+.header-cta {
+    font-size: 13px;
+}
+
+.button {
+    font-size: 13.5px;
+}
+
+.hero-description {
+    font-size: 15px;
+    color: #5d768c;
+}
+
+.section-heading>p {
+    font-size: 13.5px;
+    color: #5d768c;
+}
+
+.about-content p {
+    font-size: 14px;
+    color: #5d768c;
+}
+
+.skill-card>p {
+    font-size: 13.5px;
+    color: #5d768c;
+}
+
+.skill-detail p {
+    font-size: 12px;
+    color: #62798e;
+}
+
+.skill-detail h4,
+.skill-subsection h4 {
+    font-size: 13.5px;
+}
+
+.skill-list li {
+    font-size: 13px;
+    color: #5d768c;
+}
+
+.skill-tags span {
+    font-size: 11.5px;
+}
+
+.soft-skill-tags span {
+    font-size: 12.5px;
+}
+
+.skill-note {
+    font-size: 12px !important;
+    color: #62798e !important;
+}
+
+.project-info h3 {
+    font-size: 16px;
+}
+
+.project-info p {
+    font-size: 12px;
+    color: #62798e;
+}
+
+.project-type,
+.skill-category {
+    font-size: 10px;
+}
+
+.contact-copy p {
+    font-size: 13.5px;
+}
+
+.contact-details a b {
+    font-size: 13px;
+}
+
+.site-footer {
+    font-size: 12px;
+}
+
+.hero-meta {
+    font-size: 12px;
+    color: #7f93a6;
+}
+
+@media (max-width: 700px) {
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .skill-tags span,
+    .soft-skill-tags span {
+        font-size: 11px;
+    }
+
+    .about-facts {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .about-facts li {
+        padding-inline: 0;
+        border-inline-start: 0;
+    }
+}

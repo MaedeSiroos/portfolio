@@ -12,6 +12,7 @@
   <link rel="icon" type="image/png" href="./images/logo-maede-siroos.png">
   <link rel="preload" href="./fonts/Vazir.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="extras.css">
   <script src="script.js" defer></script>
 </head>
 
@@ -36,9 +37,9 @@
 
     <nav class="main-nav" aria-label="منوی اصلی">
       <a href="#home" class="active">صفحه اصلی</a>
+      <a href="#about">درباره من</a>
       <a href="#skills">مهارت‌های من</a>
       <a href="#projects">نمونه‌کارها</a>
-      <a href="#about">درباره من</a>
       <a href="#contact">ارتباط با من</a>
     </nav>
 
@@ -80,7 +81,10 @@
             <img src="./images/icons/work.svg" alt="">
             دیدن نمونه‌کارها
           </a>
-          <a href="#about" class="button button-quiet">بیشتر درباره من</a>
+          <a href="./files/resume-maede-siroos.pdf" class="button button-outline" download="Resume-Maede-Siroos.pdf" target="_blank">
+            <img src="./images/icons/download.svg" alt="">
+            دانلود رزومه (PDF)
+          </a>
         </div>
 
         <div class="hero-meta">
@@ -139,6 +143,54 @@
 
     </section>
 
+    <!-- درباره من -->
+    <section class="about section-wrap" id="about">
+
+      <div class="about-decoration" aria-hidden="true">
+        ABOUT
+        <br>
+        ME
+        <span>✳</span>
+      </div>
+
+      <div class="about-content">
+
+        <span class="section-kicker">A LITTLE INTRODUCTION</span>
+
+        <h2>
+          علاقه‌مند به یادگیری،
+          <br>
+          <span>متعهد به پیشرفت.</span>
+        </h2>
+
+        <p>
+          من مائده سیروس هستم؛ دانشجوی مهندسی نرم‌افزار.
+          به دنیای طراحی وب، سئو و تجربه کاربری علاقه دارم.
+          همیشه سعی می‌کنم آموخته‌هام رو به تجربه‌های واقعی تبدیل کنم.
+        </p>
+
+        <p>
+          از طراحی رابط کاربری و ساخت وب‌سایت گرفته تا
+          برنامه‌نویسی و پروژه‌های دانشگاهی؛
+          هر تجربه برای من فرصتی برای یادگیری و پیشرفته.
+        </p>
+
+        <a href="#contact" class="text-link">
+          برای همکاری در ارتباط باش
+          <img src="./images/icons/Collaboration.svg" alt="">
+        </a>
+
+      </div>
+
+      <div class="about-stamp" aria-hidden="true">
+        <span>GROW</span>
+        <b>✳</b>
+        <span>EVERY DAY</span>
+      </div>
+
+    </section>
+
+
     <!-- مهارت‌ها -->
     <section class="skills section-wrap" id="skills">
 
@@ -147,61 +199,280 @@
           <span class="section-kicker">MY EXPERTISE</span>
           <h2>مهارت‌های <span>من</span></h2>
         </div>
-        <p>ترکیبی از خلاقیت، تجربه و یادگیری در مسیر مهندسی نرم‌افزار.</p>
+        <p>
+          مجموعه‌ای از تجربه‌های عملی، مهارت‌های فنی و توانایی‌های فردی
+          که در مسیر تحصیل و فعالیت حرفه‌ای به دست آورده‌ام.
+        </p>
       </div>
 
       <div class="skills-grid">
 
-        <article class="skill-card">
-          <img class="skill-icon" src="./images/icons/website.svg" alt="">
-          <span class="skill-index">01</span>
-          <h3>طراح سایت</h3>
-          <p>
-            طراحی و پیاده‌سازی صفحات وب با تمرکز بر ظاهر،
-            ساختار و تجربه کاربری.
+        <!-- 01: سئو -->
+        <article class="skill-card seo-card">
+
+          <div class="skill-card-header">
+            <div class="skill-icon-box">
+              <img src="./images/icons/seo.svg" alt="">
+            </div>
+            <span class="skill-index">01</span>
+          </div>
+
+          <span class="skill-category">SEO & DIGITAL MARKETING</span>
+          <h3>سئو و بهینه‌سازی وب‌سایت</h3>
+
+          <p class="skill-intro">
+            سئو اصلی‌ترین حوزه فعالیت و تجربه حرفه‌ای من است.
+            از اواخر سال ۱۴۰۳ فعالیت خود را در زمینه تولید محتوای
+            سئو محور آغاز کردم و به‌مرور تجربه‌ام را در تحلیل،
+            بهینه‌سازی و بررسی عملکرد وب‌سایت‌ها گسترش دادم.
           </p>
+
+          <div class="skill-details">
+            <div class="skill-detail">
+              <span class="detail-number">01</span>
+              <div>
+                <h4>سئوی محتوا</h4>
+                <p>
+                  تولید و بهینه‌سازی محتوای وب، تحقیق کلمات کلیدی،
+                  تحلیل نیت جست‌وجو، ساختاردهی محتوا و به‌روزرسانی مقالات.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-detail">
+              <span class="detail-number">02</span>
+              <div>
+                <h4>تحلیل و بررسی عملکرد</h4>
+                <p>
+                  بررسی وضعیت صفحات، تحلیل کلیک و نمایش،
+                  نرخ کلیک، جایگاه کلمات کلیدی و رفتار کاربران.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-detail">
+              <span class="detail-number">03</span>
+              <div>
+                <h4>بهینه‌سازی و استراتژی</h4>
+                <p>
+                  بررسی ساختار صفحات، لینک‌سازی داخلی،
+                  شناسایی فرصت‌های محتوایی و تدوین مسیر بهبود سئو.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-tools">
+            <span class="tools-label">ابزارها و پلتفرم‌ها</span>
+            <div class="skill-tags">
+              <span>Google Search Console</span>
+              <span>Google Analytics</span>
+              <span>Microsoft Clarity</span>
+              <span>SEMrush</span>
+              <span>Ahrefs</span>
+              <span>Moz</span>
+              <span>Yoast SEO</span>
+              <span>Rank Math</span>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- 02: فرانت‌اند -->
+        <article class="skill-card">
+
+          <div class="skill-card-header">
+            <div class="skill-icon-box">
+              <img src="./images/icons/website.svg" alt="">
+            </div>
+            <span class="skill-index">02</span>
+          </div>
+
+          <span class="skill-category">FRONT-END DEVELOPMENT</span>
+          <h3>طراحی و توسعه فرانت‌اند</h3>
+
+          <p>
+            علاقه‌مند به طراحی و پیاده‌سازی رابط‌های کاربری
+            و تبدیل طرح‌های اولیه به صفحات وب واقعی.
+            آشنایی من با HTML و CSS از دوران هنرستان آغاز شده
+            و در حال توسعه مهارت‌هایم در برنامه‌نویسی فرانت‌اند هستم.
+          </p>
+
+          <div class="skill-subsection">
+            <h4>مهارت‌های اصلی</h4>
+            <ul class="skill-list">
+              <li>ساختاردهی صفحات با HTML5</li>
+              <li>طراحی و استایل‌دهی با CSS3</li>
+              <li>طراحی واکنش‌گرا (Responsive Design)</li>
+              <li>برنامه‌نویسی تعاملی با JavaScript</li>
+              <li>پیاده‌سازی رابط کاربری بر اساس طرح اولیه</li>
+            </ul>
+          </div>
+
+          <div class="skill-subsection">
+            <h4>فریم‌ورک‌ها و فناوری‌های در حال یادگیری</h4>
+            <div class="skill-tags">
+              <span>React.js</span>
+              <span>Next.js</span>
+              <span>JavaScript</span>
+            </div>
+            <p class="skill-note">
+              تجربه پیاده‌سازی رابط کاربری پروژه نیلی با Next.js
+              و آشنایی اولیه با اکوسیستم React.
+            </p>
+          </div>
+
+        </article>
+
+        <!-- 03: سیستم‌های مدیریت محتوا -->
+        <article class="skill-card">
+
+          <div class="skill-card-header">
+            <div class="skill-icon-box">
+              <img src="./images/icons/cms.svg" alt="">
+            </div>
+            <span class="skill-index">03</span>
+          </div>
+
+          <span class="skill-category">CMS & WEBSITE DESIGN</span>
+          <h3>طراحی سایت و سیستم‌های مدیریت محتوا</h3>
+
+          <p>
+            تجربه کار با سیستم‌های مدیریت محتوا برای ساخت
+            و راه‌اندازی وب‌سایت‌های مختلف و آشنایی با
+            ساختار و امکانات آن‌ها.
+          </p>
+
+          <div class="skill-subsection">
+            <h4>ابزارها و سیستم‌ها</h4>
+            <ul class="skill-list">
+              <li>WordPress؛ طراحی و پیاده‌سازی وب‌سایت</li>
+              <li>آشنایی با قالب‌ها و افزونه‌های وردپرس</li>
+              <li>کار با افزونه‌های سئو و بهینه‌سازی</li>
+              <li>PrestaShop؛ تجربه طراحی فروشگاه اینترنتی</li>
+            </ul>
+          </div>
+
           <div class="skill-tags">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JS</span>
             <span>WordPress</span>
+            <span>WooCommerce</span>
+            <span>PrestaShop</span>
           </div>
+
         </article>
 
-        <article class="skill-card featured-skill">
-          <img class="skill-icon" src="./images/icons/seo.svg" alt="">
-          <span class="skill-index">02</span>
-          <h3>کارشناس سئو</h3>
-          <p>
-            بهینه‌سازی محتوا و صفحات وب، تحلیل نیت جست‌وجو
-            و تدوین استراتژی محتوایی.
-          </p>
-          <div class="skill-tags">
-            <span>SEO</span>
-            <span>Yoast</span>
-            <span>Rank Math</span>
-            <span>GSC</span>
-          </div>
-        </article>
-
+        <!-- 04: برنامه‌نویسی و طراحی -->
         <article class="skill-card">
-          <img class="skill-icon" src="./images/icons/student.svg" alt="">
-          <span class="skill-index">03</span>
-          <h3>دانشجوی خلاق مهندسی نرم‌افزار</h3>
+
+          <div class="skill-card-header">
+            <div class="skill-icon-box">
+              <img src="./images/icons/code.svg" alt="">
+            </div>
+            <span class="skill-index">04</span>
+          </div>
+
+          <span class="skill-category">PROGRAMMING & DESIGN</span>
+          <h3>برنامه‌نویسی و طراحی رابط کاربری</h3>
+
           <p>
-            علاقه‌مند به برنامه‌نویسی، طراحی رابط کاربری
-            و تجربه ابزارها و فناوری‌های جدید.
+            در کنار توسعه وب، به برنامه‌نویسی و طراحی تجربه کاربری
+            علاقه دارم و از ابزارهای مختلف برای طراحی و اجرای ایده‌ها
+            استفاده می‌کنم.
           </p>
+
+          <div class="skill-subsection">
+            <h4>زبان‌ها و ابزارها</h4>
+            <ul class="skill-list">
+              <li>Python؛ آشنایی و تجربه برنامه‌نویسی در سطح دانشگاهی</li>
+              <li>Figma؛ طراحی رابط کاربری و وایرفریم</li>
+              <li>Visual Studio Code؛ محیط توسعه و کدنویسی</li>
+              <li>Git و GitHub؛ مدیریت و انتشار پروژه‌ها</li>
+            </ul>
+          </div>
+
           <div class="skill-tags">
             <span>Python</span>
             <span>Figma</span>
-            <span>Problem Solving</span>
+            <span>Git</span>
+            <span>GitHub</span>
           </div>
+
+        </article>
+
+        <!-- 05: مسئولیت‌پذیری و مدیریت -->
+        <article class="skill-card soft-skill-card">
+
+          <div class="skill-card-header">
+            <div class="skill-icon-box">
+              <img src="./images/icons/team.svg" alt="">
+            </div>
+            <span class="skill-index">05</span>
+          </div>
+
+          <span class="skill-category">PERSONAL & LEADERSHIP SKILLS</span>
+          <h3>مسئولیت‌پذیری و مدیریت فردی و تیمی</h3>
+
+          <p>
+            برای من تعهد به انجام کار فقط به شروع آن محدود نمی‌شود؛
+            پیگیری وظایف، پایبندی به زمان‌بندی و تلاش برای تحویل
+            مسئولانه کار، بخش مهمی از شیوه کاری من است.
+          </p>
+
+          <div class="soft-skill-tags">
+            <span>مسئولیت‌پذیری بالا</span>
+            <span>مدیریت زمان</span>
+            <span>تعهد به انجام وظایف</span>
+            <span>برنامه‌ریزی</span>
+            <span>مدیریت و هماهنگی تیم</span>
+            <span>تصمیم‌گیری</span>
+            <span>پیگیری امور</span>
+            <span>نظم و دقت</span>
+            <span>هدف‌گذاری</span>
+            <span>پشتکار</span>
+          </div>
+
+        </article>
+
+        <!-- 06: ارتباطات و یادگیری -->
+        <article class="skill-card soft-skill-card">
+
+          <div class="skill-card-header">
+            <div class="skill-icon-box">
+              <img src="./images/icons/bolt.svg" alt="">
+            </div>
+            <span class="skill-index">06</span>
+          </div>
+
+          <span class="skill-category">COMMUNICATION & PERSONAL GROWTH</span>
+          <h3>ارتباطات، آموزش و توسعه فردی</h3>
+
+          <p>
+            برقراری ارتباط مؤثر با افراد مختلف، صبوری در تعاملات
+            و انتقال آموخته‌ها از ویژگی‌هایی است که در همکاری‌های
+            گروهی و فعالیت‌های حرفه‌ای برایم اهمیت دارد.
+          </p>
+
+          <div class="soft-skill-tags">
+            <span>مهارت ارتباطی</span>
+            <span>کار تیمی</span>
+            <span>آموزش و انتقال دانش</span>
+            <span>صبوری</span>
+            <span>همدلی</span>
+            <span>انعطاف‌پذیری</span>
+            <span>حل مسئله</span>
+            <span>یادگیری سریع</span>
+            <span>گوش دادن فعال</span>
+            <span>پذیرش بازخورد</span>
+            <span>خلاقیت</span>
+            <span>کنجکاوی و یادگیری مداوم</span>
+          </div>
+
         </article>
 
       </div>
 
     </section>
+
 
     <!-- نمونه‌کارها -->
     <section class="projects section-wrap" id="projects">
@@ -329,53 +600,6 @@
 
     </section>
 
-    <!-- درباره من -->
-    <section class="about section-wrap" id="about">
-
-      <div class="about-decoration" aria-hidden="true">
-        ABOUT
-        <br>
-        ME
-        <span>✳</span>
-      </div>
-
-      <div class="about-content">
-
-        <span class="section-kicker">A LITTLE INTRODUCTION</span>
-
-        <h2>
-          علاقه‌مند به یادگیری،
-          <br>
-          <span>متعهد به پیشرفت.</span>
-        </h2>
-
-        <p>
-          من مائده سیروس هستم؛ دانشجوی مهندسی نرم‌افزار.
-          به دنیای طراحی وب، سئو و تجربه کاربری علاقه دارم.
-          همیشه سعی می‌کنم آموخته‌هام رو به تجربه‌های واقعی تبدیل کنم.
-        </p>
-
-        <p>
-          از طراحی رابط کاربری و ساخت وب‌سایت گرفته تا
-          برنامه‌نویسی و پروژه‌های دانشگاهی؛
-          هر تجربه برای من فرصتی برای یادگیری و پیشرفته.
-        </p>
-
-        <a href="#contact" class="text-link">
-          برای همکاری در ارتباط باش
-          <img src="./images/icons/Collaboration.svg" alt="">
-        </a>
-
-      </div>
-
-      <div class="about-stamp" aria-hidden="true">
-        <span>GROW</span>
-        <b>✳</b>
-        <span>EVERY DAY</span>
-      </div>
-
-    </section>
-
     <!-- ارتباط با من -->
     <section class="contact section-wrap" id="contact">
 
@@ -405,22 +629,22 @@
 
         <div class="contact-details">
 
-          <a href="mailto:maede.siroos@gmail.com">
+          <a href="mailto:maede.siroos@gmail.com" class="c-email">
             <span>EMAIL</span>
             <b>maede.siroos@gmail.com</b>
-            <i aria-hidden="true">✉</i>
+            <i class="c-icon"><img src="./images/icons/mail.svg" alt=""></i>
           </a>
 
-          <a href="https://www.linkedin.com/in/maede-siroos/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/maede-siroos/" target="_blank" rel="noopener noreferrer" class="c-email">
             <span>LINKEDIN</span>
             <b>پروفایل لینکدین</b>
-            <i aria-hidden="true">in</i>
+            <i class="c-icon"><img src="./images/icons/linkedin.svg" alt=""></i>
           </a>
 
-          <a href="https://github.com/MaedeSiroos" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/MaedeSiroos" target="_blank" rel="noopener noreferrer"  class="c-email">
             <span>GITHUB</span>
             <b>پروفایل گیت‌هاب</b>
-            <i aria-hidden="true">⌘</i>
+            <i class="c-icon"><img src="./images/icons/github.svg" alt=""></i>
           </a>
 
         </div>
